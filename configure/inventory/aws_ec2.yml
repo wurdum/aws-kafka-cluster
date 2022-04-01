@@ -1,0 +1,16 @@
+plugin: aws_ec2
+regions:
+  - "eu-central-1"
+hostnames:
+  - private-ip-address
+  - private-dns-name
+leading_separator: False
+keyed_groups:
+  - key: tags.role.split(":")
+include_filters:
+  - instance-state-name: running
+  - tag:project: aws_kafka_cl
+exclude_filters:
+  - tag:role: bastion
+compose:
+  kafka_broker_custom_listeners: "{'internal': {'hostname':public_dns_name}}"

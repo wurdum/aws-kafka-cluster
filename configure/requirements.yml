@@ -1,0 +1,5 @@
+---
+collections:
+  - name: https://github.com/confluentinc/cp-ansible.git
+    type: git
+    version: 7.0.1-post
