@@ -13,4 +13,4 @@ include_filters:
 exclude_filters:
   - tag:role: bastion
 compose:
-  kafka_broker_custom_listeners: "{'internal': {'hostname':public_dns_name}}"
+  kafka_broker_custom_listeners: "{'internal': {'hostname':public_dns_name}, 'client_listener': {'hostname':tags.url}}"
