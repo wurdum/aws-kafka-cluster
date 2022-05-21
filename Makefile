@@ -38,6 +38,6 @@ ping: ##@targets Verifies connection to provisioned EC2 instances.
 
 configure:  ##@targets Installs and configures Kafka cluster.
 	cd configure; \
-	ansible-playbook confluent.platform.all --tags=zookeeper,kafka_broker
+	ansible-playbook confluent.platform.all --tags=zookeeper,kafka_broker,schema_registry,control_center
 
 all: init provision ping configure ##@targets Provisions infrastructure, installs and configures Kafka cluster.
