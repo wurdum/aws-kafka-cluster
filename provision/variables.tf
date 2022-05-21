@@ -3,9 +3,14 @@ variable "project_name" {
   default = "aws_kafka_cl"
 }
 
+variable "domain_name" {
+  type    = string
+  default = "kafka.domain"
+}
+
 variable "ingressrules" {
   type    = list(number)
-  default = [22, 9092]
+  default = [22, 9092, 9093]
 }
 
 variable "ec2_instance_type" {

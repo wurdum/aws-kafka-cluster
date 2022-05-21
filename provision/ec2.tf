@@ -54,6 +54,7 @@ resource "aws_instance" "ec2_1" {
   tags = {
     project = var.project_name
     role    = "node:zookeeper:kafka_broker:schema_registry"
+    url     = "node1.${var.domain_name}"
   }
 }
 
@@ -74,6 +75,7 @@ resource "aws_instance" "ec2_2" {
   tags = {
     project = var.project_name
     role    = "node:zookeeper:kafka_broker"
+    url     = "node2.${var.domain_name}"
   }
 }
 
@@ -94,6 +96,7 @@ resource "aws_instance" "ec2_3" {
   tags = {
     project = var.project_name
     role    = "node:zookeeper:kafka_broker"
+    url     = "node3.${var.domain_name}"
   }
 }
 
