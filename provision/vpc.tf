@@ -49,7 +49,7 @@ resource "aws_route_table_association" "subnet_routes" {
 }
 
 resource "aws_security_group" "sg" {
-  name   = "allow_ingress"
+  name   = var.project_name
   vpc_id = aws_vpc.vpc.id
 
   dynamic "ingress" {

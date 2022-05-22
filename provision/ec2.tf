@@ -99,19 +99,3 @@ resource "aws_instance" "ec2_3" {
     url     = "node3.${var.domain_name}"
   }
 }
-
-output "bastion_public_dns_name" {
-  value = aws_instance.ec2_b.public_dns
-}
-
-output "node1_public_dns_name" {
-  value = aws_instance.ec2_1.public_dns
-}
-
-output "node2_public_dns_name" {
-  value = aws_instance.ec2_2.public_dns
-}
-
-output "node3_public_dns_name" {
-  value = aws_instance.ec2_3.public_dns
-}
