@@ -32,6 +32,7 @@ resource "aws_instance" "ec2_b" {
   }
 
   tags = {
+    Name    = "Bastion"
     project = var.project_name
     role    = "bastion"
   }
@@ -52,6 +53,7 @@ resource "aws_instance" "ec2_1" {
   }
 
   tags = {
+    Name    = "Node1"
     project = var.project_name
     role    = "node:zookeeper:kafka_broker:control_center"
     url     = "node1.${var.domain_name}"
@@ -73,6 +75,7 @@ resource "aws_instance" "ec2_2" {
   }
 
   tags = {
+    Name    = "Node2"
     project = var.project_name
     role    = "node:zookeeper:kafka_broker:schema_registry"
     url     = "node2.${var.domain_name}"
@@ -94,6 +97,7 @@ resource "aws_instance" "ec2_3" {
   }
 
   tags = {
+    Name    = "Node3"
     project = var.project_name
     role    = "node:zookeeper:kafka_broker"
     url     = "node3.${var.domain_name}"
